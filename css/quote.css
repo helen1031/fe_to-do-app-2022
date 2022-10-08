@@ -1,0 +1,16 @@
+#quote {
+  font-style: italic;
+  text-align: center;
+}
+
+#quote span {
+  display: block;
+  font-size: 15px;
+}
+
+#quote span:last-child {
+  opacity: 0.5;
+  margin-left: 300px;
+  font-size: 13px;
+  margin-top: 5px;
+}

@@ -1,0 +1,29 @@
+#login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+#login-form input {
+  background: transparent;
+  width : 400px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#login-form input:hover {
+  border-bottom: 1px solid black;
+}
+
+#login-form button {
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+#login-form button:hover {
+  background-color:mistyrose;
+}
+

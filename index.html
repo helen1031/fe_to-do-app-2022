@@ -5,30 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet" />
-    <title>Momentum App</title>
+    <title>TO-DO App</title>
   </head>
   <body>
     <h2 id="clock">00:00</h2>
-    <form class="hidden" id="login-form">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <button>Log In</button>
-    </form>
-
-    <h1 class="hidden" id="greeting"></h1>
-
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and press enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-
     <div id="quote">
       <span></span>
       <span></span>
+    </div>
+
+    <div class="content">
+      <form class="hidden" id="login-form" onsubmit="return false">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="Please input your name"
+        />
+        <button><i class="fas fa-sign-in-alt fa-lg"></i></button>
+      </form>
+
+      <h1 class="hidden" id="greeting"></h1>
+
+      <div id="todo-content" class="hidden">
+        <form id="todo-form">
+          <input
+            id="todo-txt"
+            type="text"
+            placeholder="Write a To Do and press enter"
+            required
+          />
+          <input type="text" style="display: none" />
+          <input id="todo-duedate" type="date" required />
+          <button id="todo-button">save</button>
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+    </div>
+    <div id="complete-content" class="hidden">
+      <ul id="completed-list"></ul>
     </div>
 
     <script src="js/greetings.js"></script>
@@ -36,5 +51,9 @@
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
