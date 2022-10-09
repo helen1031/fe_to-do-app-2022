@@ -1,0 +1,14 @@
+#weather {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#weather span{
+  display: block;
+  padding: 5px;
+}
+
+#weather span:first-child{
+  font-weight: 600;
+}

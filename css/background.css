@@ -7,3 +7,14 @@
   left: 0;
   z-index: -1;
 }
+
+#bgButton {
+  margin-left: 20px;
+  width: 120px;
+  height: 40px;
+  border-radius: 7px;
+  color: white;
+  background-color: plum;
+  font-size: 15px;
+  font-weight: 600;
+}

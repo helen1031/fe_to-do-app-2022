@@ -9,11 +9,17 @@
   </head>
   <body>
     <h2 id="clock">00:00</h2>
-    <div id="quote">
+
+    <div id="weather">
       <span></span>
       <span></span>
     </div>
 
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+    <button id="bgButton">Change Mood!</button>
     <div class="content">
       <form class="hidden" id="login-form" onsubmit="return false">
         <input
@@ -37,20 +43,25 @@
           />
           <input type="text" style="display: none" />
           <input id="todo-duedate" type="date" required />
-          <button id="todo-button">save</button>
+          <button id="todo-button">
+            <i class="fas fa-arrow-circle-down fa-2x"></i>
+          </button>
         </form>
         <ul id="todo-list"></ul>
       </div>
     </div>
     <div id="complete-content" class="hidden">
-      <ul id="completed-list"></ul>
+      <h1 id="complete-title">🙆‍♂️What you completed👍</h1>
+      <ul id="complete-list"></ul>
     </div>
 
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/background_random.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
     <script
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"

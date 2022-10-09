@@ -1,10 +1,8 @@
 const todoForm = document.getElementById("todo-form");
-//const todoInput = todoForm.querySelector("input");
 const todoInputTxt = document.getElementById("todo-txt");
-//const todoInputDueDate = todoForm.querySelector("#todo-duedate");
 const todoInputDueDate = document.getElementById("todo-duedate");
 const todoList = document.getElementById("todo-list");
-const completedList = document.getElementById("completed-list");
+const completedList = document.getElementById("complete-list");
 const todoBtn = document.getElementById("todo-button");
 
 const TODOS_KEY = "todos";
@@ -22,11 +20,9 @@ function completeToDo(event) {
   paintCompleted(tmp[0]);
   saveCompleted();
 
-
   todos = todos.filter((todo) => todo.id !== parseInt(li.id));
   li.remove();
   saveTodo();
-
 }
 
 function saveCompleted() {
@@ -49,8 +45,11 @@ function paintDDay(due) {
   const today = new Date();
   const duedate = new Date(due);
   const dist = duedate - today;
-  const dday = parseInt(Math.floor(dist / (1000 * 60 * 60 * 24)));
-  if(dday === 0){
+  const dday = parseInt(Math.floor((dist + 23 * 1000 * 60 * 60 + 59 * 1000 * 60) / (1000 * 60 * 60 * 24)));
+  if(dday < 0){
+    return `D+${Math.abs(dday)}`
+  }
+  else if(dday === 0){
     return "D-DAY";
   }else {
     return `D-${dday}`
@@ -103,11 +102,11 @@ function paintCompleted(newCompleted) {
 
   const completed_status = document.createElement("div");
   completed_status.className = "completed_status";
-  completed_status.innerText = 'COMPLETED';
+  completed_status.innerText = 'DONE';
 
   const completed_txt = document.createElement("div");
   completed_txt.className = "completed_txt";
-  completed_txt.innerText =newCompleted.text;
+  completed_txt.innerText = newCompleted.text;
 
   li.appendChild(divout);
   divout.appendChild(completed_status);

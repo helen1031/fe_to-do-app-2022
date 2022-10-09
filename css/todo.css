@@ -8,18 +8,41 @@
   text-align: center;
 }
 
+#todo-form {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
 #todo-form input {
   background: transparent;
   border-radius: 10px;
-  margin-top: 30px;
   padding: 10px;
-  width: 700px;
   font-size: 25px;
   text-align: center;
+  transition: all 0.5s ease-in;
 }
 
 #todo-form input:focus {
-  background-color: white;
+  background-color:rgb(247, 238, 247);
+}
+
+#todo-form #todo-txt {
+  width: 60%;
+}
+
+#todo-form #todo-duedate {
+  width: 20%;
+}
+
+#todo-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color:plum;
+  color: white;
 }
 
 .todo_list {
@@ -27,21 +50,44 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .todo_status {
-  width: 60px;
+  width: 50px;
   background-color: wheat;
   border-radius: 5px;
   padding: 10px;
+  color: white;
+  font-size: 15px;
+  transition: all 0.5s ease-in-out
 }
 
+.todo_status:hover {
+  transform:scale(1.1);
+}
+
+
+@keyframes highlightDday {
+  0% {
+    transform:none;
+  }
+  50% {
+    transform:scale(1.1);
+  }
+  100% {
+    transform: none;
+  }
+
+}
 .dday {
-  background-color: tomato;
+  background-color:lightsalmon;
+  animation: highlightDday 1s ease-in-out infinite;
 }
 
 .todo_txt {
-  width: 500px;
+  width: 60%;
   font-size: 25px;
 }
 
@@ -50,8 +96,19 @@
   height: 40px;
   border-radius: 8px;
   margin: 5px;
+  color: white;
 }
 
-.complete {
-  color : green;
+.todo_list .fa-trash-alt {
+  background-color: darkgrey;
+}
+.todo_list .fa-check-square {
+  background-color:rgb(108, 209, 153);
+}
+
+button {
+  transition: all .5s ease-in-out
+}
+button:hover {
+  transform: scale(1.1);
 }
